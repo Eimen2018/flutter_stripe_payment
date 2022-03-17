@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="de.jonasbark.stripepayment">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="de.jonasbark.stripepayment">
 
-    <application
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+    <application android:theme="@style/Theme.AppCompat.Light.NoActionBar" android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale" android:hardwareAccelerated="true" android:windowSoftInputMode="adjustResize">
 
-        <meta-data
-            android:name="com.google.android.gms.wallet.api.enabled"
-            android:value="true" />
+        <meta-data android:name="com.google.android.gms.wallet.api.enabled" android:value="true" />
 
-        <activity
-            android:name="com.gettipsi.stripe.OpenBrowserActivity"
-            android:exported="false"
-            android:launchMode="singleTask"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:exported="true"
-            android:launchMode="singleTask"
-            android:name="com.gettipsi.stripe.RedirectUriReceiver"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
+        <activity android:name="com.gettipsi.stripe.OpenBrowserActivity" android:exported="false" android:launchMode="singleTask" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:exported="true" android:launchMode="singleTask" android:name="com.gettipsi.stripe.RedirectUriReceiver" android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -27,6 +15,7 @@
                 <data android:scheme="${tipsiStripeRedirectScheme}" />
             </intent-filter>
         </activity>
+        <meta-data android:name="flutterEmbedding" android:value="2"/>
     </application>
 
 </manifest>
